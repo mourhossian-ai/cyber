@@ -27,3 +27,4 @@ fullscreen = 0
 
 # (list) Permissions
 android.permissions = INTERNET
+version = 0.1
