@@ -1,10 +1,29 @@
 [app]
+
+# (str) Title of your application
 title = Zinia
+
+# (str) Package name
 package.name = zinia
+
+# (str) Package domain (needed for android packaging)
 package.domain = org.zinia
+
+# (str) Source files where the *.py files exist
+source.dir = .
+
+# (list) Source files to include (let it empty to include all files)
 source.include_exts = py,png,jpg,kv,atlas
-version = 0.1
+
+# (list) Application requirements
+# comma separated e.g. requirements = sqlite3,kivy
 requirements = python3,kivy,android
+
+# (str) Supported orientations
 orientation = portrait
+
+# (int) Indicate if the application should be full screen or not
 fullscreen = 0
+
+# (list) Permissions
 android.permissions = INTERNET
