@@ -7,8 +7,6 @@ source.include_exts = py,png,jpg,kv,atlas
 version = 0.1
 
 # (list) Application requirements
-# আপনার ভয়েস অ্যাসিস্ট্যান্ট অ্যাপে অন্য কোনো লাইব্রেরি (যেমন speech_recognition) 
-# ব্যবহার করলে কমা দিয়ে নিচে যোগ করে নেবেন
 requirements = python3,kivy
 
 orientation = portrait
@@ -17,16 +15,16 @@ fullscreen = 0
 # (list) Permissions
 android.permissions = INTERNET
 
-# (int) Target Android API, should be as high as possible.
-android.api = 33
+# (int) Target Android API
+android.api = 34
 
 # (int) Minimum API your APK will support.
 android.minapi = 21
 
 # (str) Android NDK version to use
-android.ndk = 25b
+android.ndk = 26c
 
-# (bool) Use --private data directory (True) or a public user directory (False)
+# (bool) Use --private data directory
 android.private_storage = True
 
 # (bool) Accept SDK license without prompting
