@@ -50,18 +50,12 @@ jobs:
 
       - name: Install Buildozer and Cython
         run: |
-          pip install --upgrade pip
-          pip install cython==0.29.36 buildozer
+          pip install --upgrade pip setuptools cython
+          pip install buildozer
 
       - name: Build with Buildozer
         run: |
           mkdir -p ~/.android
           touch ~/.android/repositories.cfg
           export BUILDOZER_ALLOW_KIVY_NEW_DESIGNER=1
-          export APP_ALLOW_ROOT=1
-          # গিটহাবের জোর করে দেওয়া পাথ মুছে ফেলার চূড়ান্ত ফিক্স
-          export ANDROID_NDK_HOME="/home/runner/.buildozer/android/platform/android-ndk-r26c"
-          export ANDROID_NDK_ROOT="/home/runner/.buildozer/android/platform/android-ndk-r26c"
-          # ব্যাকগ্রাউন্ডের সব জটলা সাফ করার কম্যান্ড
-          buildozer android clean
           yes | buildozer android debug log_level=2
