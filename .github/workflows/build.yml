@@ -53,10 +53,16 @@ jobs:
           pip install --upgrade pip
           pip install cython==0.29.36 buildozer
 
-      - name: Build with Buildozer
+      - name: Remove Pre-installed GitHub NDK and Set Licenses
         run: |
           mkdir -p ~/.android
           touch ~/.android/repositories.cfg
+          # গিটহাবের সার্ভারে থাকা সমস্যাযুক্ত NDK 27 পুরোপুরি মুছে ফেলার কমান্ড
+          sudo rm -rf /usr/local/lib/android/sdk/ndk
+          sudo rm -rf /usr/local/lib/android/sdk/ndk-bundle
+
+      - name: Build with Buildozer
+        run: |
           export BUILDOZER_ALLOW_KIVY_NEW_DESIGNER=1
           export APP_ALLOW_ROOT=1
           yes | buildozer android debug log_level=2
