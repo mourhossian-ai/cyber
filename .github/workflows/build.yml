@@ -42,7 +42,11 @@ jobs:
             zlib1g-dev \
             libncurses5-dev \
             libffi-dev \
-            libssl-dev
+            libssl-dev \
+            libtool \
+            pkg-config \
+            autoconf \
+            automake
 
       - name: Install Buildozer and Cython
         run: |
@@ -51,4 +55,7 @@ jobs:
 
       - name: Build with Buildozer
         run: |
+          mkdir -p ~/.android
+          touch ~/.android/repositories.cfg
           yes | buildozer -v android debug log_level=2
+l
