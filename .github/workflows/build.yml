@@ -66,3 +66,10 @@ jobs:
           export BUILDOZER_ALLOW_KIVY_NEW_DESIGNER=1
           export APP_ALLOW_ROOT=1
           yes | buildozer android debug log_level=2
+      - name: Build with Buildozer
+        run: |
+          export BUILDOZER_ALLOW_KIVY_NEW_DESIGNER=1
+          export APP_ALLOW_ROOT=1
+          export ANDROID_NDK_HOME="/home/runner/.buildozer/android/platform/android-ndk-r26c"
+          export ANDROID_NDK_ROOT="/home/runner/.buildozer/android/platform/android-ndk-r26c"
+          yes | buildozer android debug log_level=2
